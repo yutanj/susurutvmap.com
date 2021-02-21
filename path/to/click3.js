@@ -25,10 +25,9 @@ function initMap() {
         // 座標を表示
         //console.log(document.getElementById('lat').textContent);
         //console.log(riku);
-        document.getElementById('lat').textContent = lat_lng.lat();
-        document.getElementById('lng').textContent = lat_lng.lng();
+        document.getElementById('total1').value = lat_lng.lat();
+        document.getElementById('total2').value = lat_lng.lng();
         //console.log(lat_lng.lat());
-        console.log('hellllo');
 
         // マーカーを設置
         var marker = new google.maps.Marker({
