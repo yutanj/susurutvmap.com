@@ -42,6 +42,6 @@
    ?>
 
   <!--<input type="button" onclick="location.href='set_lating_test.php'" value="次へ">-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDodZcfXqmf6oAGQs4wTLzCWz2mTwZY-qE&signed_in=true&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php include("keys/googlemap.php"); ?>&signed_in=true&callback=initMap" async defer></script>
 </body>
 </html>
