@@ -30,6 +30,8 @@
     //console.log(initmap4);
   </script>
   <form name="sampleForm" method="post" action="destination.php">
+    名前：<input name="username" id="username" value="">
+    配達物：<input name="contents" id="contents" value="">
     <input name="total1" id="total" value="">
     <input name="total2" id="total" value="">
     <input type="submit" value="Click to submit"></input>
