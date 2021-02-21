@@ -29,10 +29,10 @@
   <script>
     //console.log(initmap4);
   </script>
-  <form id="sampleForm" name="sampleForm" method="post" action="test2.php">
-    <input type="hidden" name="total1" id="total" value="">
-    <input type="hidden" name="total2" id="total" value="">
-    <a href="#" onclick="setValue();">Click to submit</a>
+  <form name="sampleForm" method="post" action="destination.php">
+    <input name="total1" id="total" value="">
+    <input name="total2" id="total" value="">
+    <input type="submit" value="Click to submit"></input>
   </form>
   <?php
   //session_start();
