@@ -1,0 +1,202 @@
+* {
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*background-color: rgba(95, 193, 199, 0.5);*/
+  background-color: rgba(255, 245, 224);
+  font-family: "ヒラギノ角ゴシック", "游ゴシック", "メイリオ";
+}
+header {
+  padding: 30px 7.5% 10px 7.5%;
+  /*position: fixed;*/
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+nav {
+   margin: 0 0 0 auto;
+}
+ul {
+   list-style: none;
+   margin: 0;
+   display: flex;
+}
+li {
+   margin: 0 0 0 15px;
+   font-size: 18px;
+}
+.nav_list {
+   text-decoration: none;
+   color: #4b4b4b;
+}
+h1 {
+   margin: 0; padding: 0;
+   font-size: 34px;
+}
+h2 {
+    font-size: 20px;
+}
+.top_info, .top_htu {
+  text-align: center;
+  background-color: #DFB793;
+  border-top: 1px solid #c0c6c9;
+  border-bottom: 1px solid #c0c6c9;
+  /*color: #474a4d;*/
+  color: #000;
+  font-size: 14px;
+  margin-top: 0;
+}
+.top_htu {
+  background-color: rgb(193,137,110);
+}
+#map {
+  height: 80%;
+  width: 85%;
+  margin: 30px auto 0 auto;
+  z-index: 2;
+}
+#LikesIcon {
+  max-width: 35px;
+}
+.btn_wrapper {
+  text-align: center;
+  margin: 30px 0;
+}
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+.btn--orange,a.btn--orange {
+  /*text-align: center;*/
+  color: #fff;
+  /*background-color: #eb6100;*/
+  background-color: rgb(254,92,0);
+}
+.btn--orange:hover,a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+.ad_img {
+  margin-top: 40px;
+}
+/*テストコード*/
+
+footer {
+width: 100%;
+/*height: 85px;*/
+text-align: center;
+color: #000;
+/*background-color: #fef4f4;*/
+/*padding-top: 10px;カメ除き*/
+}
+.footer_wrapper {
+  margin-top: 30px;
+}
+.footer_title {
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 8px;
+  margin-top: 30px;
+}
+.footer_copyright {
+  font-size: 13px;
+  padding-top: 50px;
+  padding-bottom: 5px;
+}
+.footer-text {
+color: #fff;
+}
+.br-sp {
+  display: none;
+}
+@keyframes heartAnimation {
+0% {
+/* アイコンサイズをもとのより小さくする */
+transform: scale(0.5);
+}
+10% {
+transform: scale(0.7);
+}
+30% {
+transform: scale(0.9);
+}
+50% {
+transform: scale(1.2);
+}
+80% {
+transform: scale(1.5);
+}
+100% {
+/* もとのサイズに戻す */
+transform: scale(1.0);
+}
+}
+.LikesIcon-fa-heart{
+font-size: 30px;
+}
+.LikesIcon-fa-heart.heart{
+/* heartAnimationアニメーションを200ミリ秒かけて実行する */
+animation: heartAnimation .2s;
+/* アイコン色を黒から赤へ変更する */
+color: #e2264d;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  header {
+    padding: 30px auto 10px;
+    height: 45px;
+  }
+  h1 {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  h2 {
+    display: none;
+    font-size: 7px;
+  }
+  li {
+    font-size: 10px;
+  }
+  .infowindow_content {
+    width: 40%;
+    height: 35%;
+  }
+  .btn_wrapper {
+    width: 85%;
+    margin: 30px auto 0 auto;
+  }
+  .br-sp {
+    display: block;
+  }
+}
