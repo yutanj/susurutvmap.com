@@ -1,5 +1,5 @@
 <?php
-require_once('dbc.php');
+require_once('dbc_production.php');
 error_reporting(0);
 //error_reporting(E_ALL & ~E_NOTICE);
 $dbc = new Dbc;
