@@ -1,9 +1,6 @@
 <?php
-//本番環境！！
 /*
-$dsn = 'mysql:dbname=4rgdb_ramenmap;host=mysql64.conoha.ne.jp;charset=utf8';
-$user = '4rgdb_yutadb';
-$password = 'Yuta_0224';
+本番環境のデータベース情報
 */
 class Dbc {
   function dbConnectRamenMap(){
