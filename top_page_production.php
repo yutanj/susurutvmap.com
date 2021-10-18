@@ -125,6 +125,7 @@ $DB_table_name_json = json_encode($DB_table_name, JSON_HEX_TAG | JSON_HEX_AMP | 
   </footer>
   <script>
   const js_test = <?php echo $output_db_array; ?>;
+  console.log(js_test);
   const pref = <?php echo $DB_table_name_json; ?>;
   function initMap(js_test) {
     const map = new google.maps.Map(document.getElementById("map"), {

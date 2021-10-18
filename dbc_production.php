@@ -7,6 +7,11 @@ class Dbc {
     $dsn = 'mysql:dbname=ramen_maps;host=localhost;charset=utf8';
     $user = 'root';
     $password = '785HuezRS';
+    /*
+    $dsn = 'mysql:dbname=4rgdb_ramenmap;host=mysql64.conoha.ne.jp;charset=utf8';
+    $user = '4rgdb_yutadb';
+    $password = 'Yuta_0224';
+    */
 
     try {
         $dbh = new PDO($dsn, $user, $password,[
