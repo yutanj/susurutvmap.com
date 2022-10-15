@@ -1,0 +1,105 @@
+* {
+padding: 0;
+margin: 0;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*background-color: #a2d7dd;*/
+  background-color: #ffcc99;
+  font-family: "ヒラギノ角ゴシック", "游ゴシック", "メイリオ";
+}
+header {
+  padding: 30px 0 10px 7.5%;
+  /*position: fixed;*/
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  /*display: flex;*/
+  align-items: center;
+}
+.wrap_header {
+  overflow: hidden;
+}
+h1 {
+  margin: 0 auto; padding: 0;
+  font-size: 34px;
+ }
+h2 {
+  font-size: 20px;
+}
+.top_htu {
+  text-align: center;
+  background-color: #eaedf7;
+  border-top: 1px solid #c0c6c9;
+  border-bottom: 1px solid #c0c6c9;
+  color: #474a4d;
+  font-size: 14px;
+  margin-top: 0;
+}
+#content {
+  width: 85%;
+  margin: 30px auto 0 auto;
+  z-index: 2;
+}
+.content_text {
+  margin-top: 10px;
+}
+.textflagpng {
+  font-size: 10px;
+}
+.return_button_wrapper {
+  text-align: center;
+}
+.return_button {
+  width: 30%;
+  min-width: 100px;
+  font-family: inherit;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #ccc;
+  color: #000;
+  margin-top: 40px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.return_button:hover {
+  background: #1d49aa;
+}
+
+.return_button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px #cbd6ee;
+}
+
+@media screen and (max-width: 959px) {
+	/* 959px以下に適用されるCSS（タブレット用） */
+}
+@media screen and (max-width: 480px) {
+	/* 480px以下に適用されるCSS（スマホ用） */
+  header {
+    padding: 30px auto 10px;
+  }
+  h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+  }
+  h2 {
+    font-size: 14px;
+  }
+  .infowindow_content {
+    width: 40%;
+    height: 35%;
+  }
+  .btn_wrapper {
+    width: 85%;
+    margin: 30px auto 0 auto;
+  }
+  .br-sp {
+    display: block;
+  }
+}
