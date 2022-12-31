@@ -1,14 +1,15 @@
 <?php
 class Dbc {
   function dbConnectRamenMap(){
-
+    /*
     $dsn = 'mysql:dbname=ramen_maps;host=localhost;charset=utf8';
     $user = 'root';
     $password = '785HuezRS';
+    */
     
-    // $dsn = 'mysql:dbname=4rgdb_ramenmap;host=mysql64.conoha.ne.jp;charset=utf8';
-    // $user = '4rgdb_yutadb';
-    // $password = 'Yuta_0224';
+    $dsn = 'mysql:dbname=4rgdb_ramenmap;host=mysql64.conoha.ne.jp;charset=utf8';
+    $user = '4rgdb_yutadb';
+    $password = 'Yuta_0224';
     
 
     try {
@@ -92,99 +93,97 @@ class Dbc {
 
   function getRequestAllOverJapan(){
     $dbh = $this->dbConnectRamenMap();
-    $sql = "SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_hokkaido WHERE status = 0
+    $sql = "SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_hokkaido WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_aomori WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_aomori WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_iwate WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_iwate WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_miyagi WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_miyagi WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_akita WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_akita WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_yamagata WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_yamagata WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_fukushima WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_ibaraki WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_ibaraki WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_tochigi WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_tochigi WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_gunma WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_gunma WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_saitama WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_saitama WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_chiba WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_chiba WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_tokyo WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_tokyo WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_kanagawa WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_kanagawa WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_niigata WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_niigata WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_toyama WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_toyama WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_ishikawa WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_ishikawa WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_fukui WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_fukui WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_yamanashi WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_yamanashi WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_nagano WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_nagano WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_gifu WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_gifu WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_shizuoka WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_shizuoka WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_aichi WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_aichi WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_mie WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_mie WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_shiga WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_shiga WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_kyoto WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_kyoto WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_osaka WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_osaka WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_hyogo WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_hyogo WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_nara WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_nara WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_wakayama WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_wakayama WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_tottori WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_tottori WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_shimane WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_shimane WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_okayama WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_okayama WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_hiroshima WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_hiroshima WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_yamaguchi WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_yamaguchi WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_tokushima WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_tokushima WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_kagawa WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_kagawa WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_ehime WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_ehime WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_kochi WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_kochi WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_fukuoka WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_fukuoka WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_saga WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_saga WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_nagasaki WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_nagasaki WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_kumamoto WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_kumamoto WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_oita WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_oita WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_miyazaki WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_miyazaki WHERE status = 0
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_kagoshima WHERE status = 0
             UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_kagoshima WHERE status = 0
-            UNION ALL
-            SELECT stores_name, stores_address, youtube_url, video_id, latitude, longitude FROM ramen_db_okinawa WHERE status = 0";
+            SELECT name_address, youtube_url, latitude, longitude FROM ramen_db_okinawa WHERE status = 0";
 
     $stmt = $dbh->query($sql);
     //③SQLの結果を受け取る
@@ -198,7 +197,7 @@ class Dbc {
   function testgetAllRequestf(){
     $dbh = $this->dbConnectRamenMap();
     //$sql = "SELECT id, name_address, youtube_url, latitude, longitude FROM ramen_db_tokyo WHERE status = 0";
-    $sql = "SELECT id, name_address, youtube_url, latitude, longitude FROM ramen_db_tokyo WHERE id >= 1080";
+    $sql = "SELECT id, name_address, youtube_url, latitude, longitude FROM ramen_db_tokyo";
     $stmt = $dbh->query($sql);
     $result = $stmt->fetchall(PDO::FETCH_ASSOC);
     $output_db_json = json_encode($result, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);

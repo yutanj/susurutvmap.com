@@ -10,10 +10,10 @@ $DB_table_name_json = json_encode($DB_table_name, JSON_HEX_TAG | JSON_HEX_AMP | 
 
 ?>
 <!DOCTYPE html>
-<html class="h-full" lang="en">
+<html class="h-full" lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>TailwindCss sample</title>
+  <title>香川県 | SUSURU TV. map</title>
   <!--<link rel="stylesheet" href="../src/styles_dev.css">-->
   <!--<link rel="stylesheet" href="tailwind.css">-->
   <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"/>
@@ -21,69 +21,82 @@ $DB_table_name_json = json_encode($DB_table_name, JSON_HEX_TAG | JSON_HEX_AMP | 
   <meta http-equiv="x-dns-prefetch-control" content="on">
   <link rel="preconnect dns-prefetch" href="https://www.google.com/maps">
   <link rel="preconnect dns-prefetch" href="https://fonts.google.com/">
-  <title>SUSURU TV.map | 近くのラーメン店</title>
-
-  <link rel="icon" href="../favicon.ico" id="favicon">
+  <link rel="icon" href="../../favicon.ico" id="favicon">
   <meta name="description" content="YouTuber SUSURU TV.さんが紹介したラーメン店を地図上から探すことができます。">
+  <style>
+    
+.entry-btn-wrapper {
+  
+}
+.entry-btn{
+  margin: auto 0;
+  position: relative;
+  text-decoration: none;
+  color: #1d1d1d;
+  display: block;
+  max-width: 240px;
+  padding: 0.5rem;
+  border-radius: 50px;
+  border: 1px solid #1d1d1d;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  background-color: #fff;
+  font-weight: bold;
+  transition: transform .2s;
+  &:active{
+   transform: scale(.95);
+  }
+}
+  </style>
 </head>
+
 <body class="font-sans h-full">
-<header class="flex pt-7 pb-2.5 pl-6 mb-7 border-b-2 md:pl-14">
+  <header class="flex pt-7 pb-2.5 pl-6 mb-7 border-b-2 md:pl-14">
     <div>
-      <a href="../top_page_production.php"><img src="../header_icon.png" class="w-30 h-3 md:w-60 h-9"></a>
+      <a href="../../index.php"><img src="../../header_icon.png" class="w-30 h-3 md:w-60 h-9"></a>
     </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
   </header>
+
   <div class="px-5 h-full">
-  <div class="h-2/5 w-full mx-auto" id="map"></div>
-  <!-- <div class="text-center ">
-    <a type="button" class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 inline-block hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 shadow-lg shadow-red-500/50 dark:shadow-lg dark:shadow-red-800/80 font-medium rounded-lg text-2xl relative tracking-wide px-5 py-2.5 text-center mt-6 mx-6">西船橋付近の地図を見る</a>
+  <h1 class="font-bold text-2xl pb-4">香川県のラーメン</h1>
+  <div class="h-2/5 w-full mx-auto mb-4" id="map"></div>
+  <!-- <div class='entry-btn-wrapper'>
+    <a href="#" class="entry-btn">ボタン</a>
   </div> -->
-  <h1 class="font-bold text-2xl py-4">西船橋駅のラーメン</h1>
-  <p class="text-lg">SUSURU TV.で紹介された、西船橋駅周辺のラーメン店をまとめています。お店選びの参考に参考にしてみてください。</p>
-  <section>
-        <div class="relative items-center w-full py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
-          <div class="grid w-full grid-cols-1 mx-auto">
-            <div class="border-t-2 max-w-full md:p-6 mx-auto">
-              <h2 class="mx-auto mb-8 pt-5 text-xl font-semibold leading-4 lg:text-3xl">Short length headline.</h1>
-              <p class="mx-auto text-xl leading-relaxed text-gray-500">Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS, HTML &amp; Next.js.</p>
-            </div>
-          </div>
+  
+  
+  <h2 class="text-lg">SUSURU TV.で紹介された、香川県のラーメン店をまとめています。お店選びの参考に参考にしてみてください。（サムネイルをクリックすると動画が見れます）</p>
+  
+    <div id="ramen-shop-list">
+    <div class="border-b-2">
+        <div class="flex my-5">
+            <a href="https://www.youtube.com/watch?v=ZQydq_5vmMc"><img class="w-36 h-auto pt-2 pr-4 md:w-58 h-auto pr-4" src="http://img.youtube.com/vi/ZQydq_5vmMc/mqdefault.jpg" alt=""></a>
+            <h3 class="font-bold">木蘭</h3>
         </div>
-      </section>
-      <section>
-        <div class="relative items-center w-full px-5 py-5 mx-auto md:px-12 lg:px-24 max-w-7xl">
-          <div class="grid w-full grid-cols-1 mx-auto">
-            <div class="border-t-2 max-w-full md:p-6 mx-auto">
-              <img src="http://img.youtube.com/vi/swpaOrubkT0/mqdefault.jpg">
-              <h2 class="mx-auto mb-8 pt-5 text-2xl font-semibold leading-none tracking-tighter text-neutral-600 lg:text-3xl">Short length headline.</h1>
-              <p class="mx-auto text-base leading-relaxed text-gray-500">Free and Premium themes, UI Kit's, templates and landing pages built with Tailwind CSS, HTML &amp; Next.js.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+    </div>
+    
+    </div>
+  <footer class="w-full text-center ">
+    <div class="mt-8">
+      <p class="text-sm pt-12 pb-2">© 2021 SUSURU TV. maps</p>
+    </div>
+  </footer>
+    
 </div>
   <script>
   const js_test = <?php echo $output_db_array; ?>;
-  // var laat = 35.858921;
-  // var lnng = 136.29879;
-  // let url = new URL(window.location.href);
-  // console.log(url);
-  // // URLSearchParamsオブジェクトを取得
-  // let params = url.searchParams;
-  // console.log(params);
-  // var get_param_lat = params.get('lat');
-  // console.log(get_param_lat);
-  // var get_param_lng = params.get('lng');
-
+  
   //paramでとってくるときはコメントアウト
-  var get_param_lat = 35.71069;
-  var get_param_lng = 139.9619410;
+  
+  //34.34120380059338, 134.0438464548076
+  var get_param_lat = 34.34120;
+  var get_param_lng = 134.04384;
   
   const pref = <?php echo $DB_table_name_json; ?>;
   function initMap() {
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 14,
+      zoom: 9,
       center: { lat: parseFloat(get_param_lat), lng: parseFloat(get_param_lng)},
       gestureHandling: 'greedy',
       fullscreenControl: true
@@ -153,47 +166,6 @@ function setMarkers(map){
     });
   }
 
-//}
-//ボタンをクリックしたら現在地を取得し座標を返す
-
-// function getCurrentPosition(map) {
-//   var get_cp_btn = document.getElementById("get_current_position");
-//   get_cp_btn.addEventListener('click', function() {
-//     if (navigator.geolocation) {
-//       // 現在地を取得
-//       navigator.geolocation.getCurrentPosition(
-//         // 取得成功した場合
-//         function(position) {
-//           // 緯度・経度を変数に格納
-//           var mapLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-//           map.setZoom(16);
-//           map.setCenter(mapLatLng);
-//         },
-//         // 取得失敗した場合
-//         function(error) {
-//           // エラーメッセージを表示
-//           switch(error.code) {
-//             case 1: // PERMISSION_DENIED
-//             alert("位置情報の利用が許可されていません");
-//             break;
-//             case 2: // POSITION_UNAVAILABLE
-//             alert("現在位置が取得できませんでした");
-//             break;
-//             case 3: // TIMEOUT
-//             alert("タイムアウトになりました");
-//             break;
-//             default:
-//             alert("その他のエラー(エラーコード:"+error.code+")");
-//             break;
-//           }
-//         }
-//       );
-//       // Geolocation APIに対応していない
-//     } else {
-//       alert("この端末では位置情報が取得できません");
-//     }
-//   })
-// }
 
 </script>
       

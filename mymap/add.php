@@ -1,11 +1,8 @@
 <?php
 session_start();
-//echo $_SESSION['addfav'];
 require_once('../dbc.php');
 $dbc = new Dbc;
 $dbh = $dbc->dbConnectRamenMap();
-//header("Set-Cookie: cross-site-cookie=whatever; SameSite=None; Secure");
-//error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
 
 //home.phpからのアクセス以外を飛ばす
