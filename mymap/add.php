@@ -34,39 +34,23 @@ if (!empty($_POST['check'])) {
     unset($_SESSION['youtube_url']);
     unset($_SESSION['latitude']);
     unset($_SESSION['longitude']);
-    header('Location: home2.php');   // thank.phpへ移動
+    header('Location: home2.php');
     exit();
 }
 
 $posted_url = $_SESSION['addfav'];
-//echo $posted_url;
+echo $posted_url;
 //echo $_SESSION['addfav'];
 $posted_url = implode($posted_url);
+echo $posted_url;
 
-/*
-$dsn = 'mysql:dbname=ramen_maps;host=localhost;charset=utf8';
-$user = 'root';
-$password = '785HuezRS';
-*/
-/*$db_link = mysqli_connect( 'mysql64.conoha.ne.jp', '4rgdb_yutadb', 'Yuta_0224', '4rgdb_ramenmap');*/
-$db_link = mysqli_connect( 'localhost', 'root', '785HuezRS', 'ramen_maps');
 
-if( mysqli_connect_errno($db_link) ) {
-	echo mysqli_connect_errno($db_link) . ' : ' . mysqli_connect_error($db_link);
-}
-
-mysqli_set_charset($db_link, 'utf8');
-
-var_dump(mysqli_real_escape_string($db_link, $posted_url));
-
-$v_id_sample = "LaFiSxDIIQs";
-//$ull = $dbc->videoidToGetColumn($v_id_sample);
 $video_id = $dbc->urlToVideoid($posted_url);
-//echo $video_id;
+echo $video_id;
 $result_json = $dbc->videoidToGetColumn($video_id);
-//echo $result_json;
+echo $result_json;
 $result_array = json_decode($result_json, true);
-//echo $result_array;
+echo $result_array;
 
 $_SESSION['stores_name'] = $result_array["stores_name"];
 $_SESSION['stores_address'] = $result_array["stores_address"];
